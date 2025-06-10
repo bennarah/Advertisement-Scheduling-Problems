@@ -1,23 +1,34 @@
-# Advertisement-Scheduling-Problems
+# Advertisement Scheduling Problem
 
-# Instructions
+This project solves the Advertisement Scheduling Problem using a greedy algorithm.
 
-Assume that you are giving 𝑛 advertisement slots. Each slot has:
-• A unique ID
-• A deadline (the latest time by which it must be completed)
-• A profit (earned if the job is completed before or on its deadline)
-The goal is to schedule advertisements slots or jobs such that the total profit is maximized and
-each slot takes 1 unit of time. Each slot is scheduled as late as possible before its deadline (if a slot
-is available). An example is given below:
-Sample Input:
-Jobs = [
-{id: 'A', deadline: 2, profit: 100},
-{id: 'B', deadline: 1, profit: 19},
-{id: 'C', deadline: 2, profit: 27},
-{id: 'D', deadline: 1, profit: 25},
-{id: 'E', deadline: 3, profit: 15}, ]
-Sample Output:
-Scheduled Jobs: ['A', 'C', 'E']
-Total Profit: 142
-Design an algorithm that returns the maximum number of advertisements jobs to be aired, subject
-to the latest deadline (3). Your algorithm must ensure maximization of profit.
+Each advertisement has:
+- An ID
+- A deadline (the latest time it can be scheduled)
+- A profit (earned if scheduled on or before its deadline)
+
+Each ad takes 1 unit of time. The goal is to schedule ads to maximize total profit without overlapping ads.
+
+## How the Algorithm Works
+
+1. Sort the ads in decreasing order of profit.
+2. For each ad, try to schedule it in the latest available time slot before its deadline.
+3. If a time slot is free, schedule the ad and add its profit to the total.
+4. Return the list of scheduled ad IDs and the total profit.
+
+## Time Complexity
+
+- Sorting: O(n log n)
+- Scheduling: O(n × d), where d is the maximum deadline
+- Worst-case time complexity: O(n²)
+
+## Example Input
+
+```python
+ads = [
+    {'id': 'A', 'deadline': 2, 'profit': 100},
+    {'id': 'B', 'deadline': 1, 'profit': 19},
+    {'id': 'C', 'deadline': 2, 'profit': 27},
+    {'id': 'D', 'deadline': 1, 'profit': 25},
+    {'id': 'E', 'deadline': 3, 'profit': 15},
+]

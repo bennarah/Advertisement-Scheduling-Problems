@@ -1,4 +1,6 @@
 # Advertisement Scheduling Problem
+Bassma Ennarah bennarah@csu.fullerton.edu
+
 
 This project solves the Advertisement Scheduling Problem using a greedy algorithm.
 
